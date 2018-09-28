@@ -1,3 +1,10 @@
+# Name : Musa Saleem
+# Date : 9 / 28
+# Last Modified : 9 / 28
+# Comments : On this project I made five crosses that connect with one another
+
+
+
 import turtle
 turtle.speed(12)
 
@@ -7,31 +14,43 @@ def side_length():
     return float(length)
 
 
-def cross(length):
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
-    turtle.right(90)
-    turtle.forward(length)
-    turtle.left(90)
-    turtle.forward(length)
+def fill_color():
+    """
+    This function gets the inside color of the cross
+    :return:
+    """
+    color = input("what do you want the inside color of the cross to be?")
+    return color
 
+
+def cross(length, color):
+    turtle.color(color)
+    turtle.begin_fill()
+
+    turtle.forward(length)
+    turtle.right(90)
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.right(90)
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.right(90)
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.right(90)
+    turtle.forward(length)
+    turtle.left(90)
+    turtle.forward(length)
+    turtle.end_fill()
 
 def move(x, y):
     turtle.penup()
@@ -41,18 +60,19 @@ def move(x, y):
 
 def main():
     length = side_length()
-    cross(length)
-    move(120, 0)
+    color = fill_color()
+    cross(length, color)
+    move(3 * length, 0)
     turtle.left(90)
-    cross(length)
-    move(240, 0)
+    cross(length, color)
+    move(6 * length, 0)
     turtle.left(90)
-    cross(length)
-    move(160,-40)
-    cross(length)
-    move(200,80)
+    cross(length, color)
+    move(4 * length, -length)
+    cross(length, color)
+    move(5 * length, 2 * length)
     turtle.right(90)
-    cross(length)
+    cross(length, color)
 
     turtle.exitonclick()
 
